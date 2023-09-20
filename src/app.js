@@ -1,11 +1,12 @@
 const express = require("express");
 const app = express();
 
+const path = require("path");
 const subscribersData = require("./models/subscribers");
 // Your code goes here
 
 app.get("/", (req, res) => {
-  res.send("Welcome to 3000");
+  res.sendFile(path.join(__dirname, "./home.html"));
 });
 
 //response with an array containing all the subscribers data.
